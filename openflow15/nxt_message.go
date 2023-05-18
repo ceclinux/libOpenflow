@@ -1189,6 +1189,7 @@ func (p *PacketIn2PropContinuation) UnmarshalBinary(data []byte) error {
 
 // Decode PacketIn2 Property types.
 func DecodePacketIn2Prop(data []byte) (Property, error) {
+	klog.Infof("%+v", data)
 	t := binary.BigEndian.Uint16(data[:2])
 	var p Property
 	switch t {
